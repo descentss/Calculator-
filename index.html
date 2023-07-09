@@ -9,27 +9,54 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <div class="calculator">
-      <input type="text" class="currentdisplay" disabled />
-      <input type="text" class="finaldisplay" disabled />
-      <div class="buttons">
-        <button class="number">7</button>
-        <button class="number">8</button>
-        <button class="number">9</button>
-        <button class="operator">/</button>
-        <button class="number">4</button>
-        <button class="number">5</button>
-        <button class="number">6</button>
-        <button class="operator">*</button>
-        <button class="number">1</button>
-        <button class="number">2</button>
-        <button class="number">3</button>
-        <button class="operator">-</button>
-        <button class="number zero">0</button>
-        <button class="equal-sign">=</button>
-        <button class="clear">C</button>
-        <button class="operator">+</button>
+    <section class="wrapper-parent">
+      <div class="wrapper-child">
+        <div class="calculator">
+          <div class="display">
+            <div class="calculator-display">
+              <div class="screen-previous">0</div>
+              <!-- non breaking space necessary for initial div output -->
+              <div class="screen-current">&nbsp;</div>
+            </div>
+          </div>
+          <div class="buttons-grid">
+            <!-- First Row-->
+            <button class="btn" id="allClearBtn">AC</button>
+            <button class="btn" id="clearBtn">C</button>
+            <button class="btn" data-operator="remainder">%</button>
+            <button class="btn" data-operator="multiply">&#215</button>
+            <!-- Second Row -->
+            <button class="btn" data-number>7</button>
+            <button class="btn" data-number>8</button>
+            <button class="btn" data-number>9</button>
+            <button class="btn" data-operator="add">+</button>
+            <!-- Third Row -->
+            <button class="btn" data-number>4</button>
+            <button class="btn" data-number>5</button>
+            <button class="btn" data-number>6</button>
+            <button class="btn" data-operator="subtract">-</button>
+            <!-- Fourth Row -->
+            <button class="btn" data-number>1</button>
+            <button class="btn" data-number>2</button>
+            <button class="btn" data-number>3</button>
+            <button class="btn" data-operator="divide">&#247</button>
+            <!-- Fifth Row -->
+            <button class="btn" data-number>0</button>
+            <button class="btn" id="decimalBtn">.</button>
+            <button class="btn" id="equalsBtn">=</button>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+    <footer class="footer">
+      <p>
+        Copyright
+        <script> document.write(new Date().getfullYear())
+          </script>
+          SpencerSee
+      </p>
+      <!-- blank opens the link on a new web page -->
+      <!-- <a href="https://github.com/descentss" target="_blank"><i class="fab fa-github"></i></a> -->
+    </footer>
   </body>
 </html>
