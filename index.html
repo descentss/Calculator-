@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,7 +25,7 @@
           <div class="buttons-grid">
             <!-- First Row-->
             <button class="btn" id="allClearBtn">AC</button>
-            <button class="btn" id="clearBtn">C</button>
+            <button class="btn" id="deleteBtn">DEL</button>
             <button class="btn" data-operator="remainder">%</button>
             <button class="btn" data-operator="multiply">&#215</button>
             <!-- Second Row -->
@@ -43,7 +46,7 @@
             <!-- Fifth Row -->
             <button class="btn" data-number>0</button>
             <button class="btn" id="decimalBtn">.</button>
-            <button class="btn" id="equalsBtn">=</button>
+            <button class="btn" id="equalBtn">=</button>
           </div>
         </div>
       </div>
@@ -51,9 +54,8 @@
     <footer class="footer">
       <p>
         Copyright
-        <script> document.write(new Date().getfullYear())
-          </script>
-          SpencerSee
+        <script> document.write(new Date().getFullYear())</script>
+          Spencer See
       </p>
       <!-- blank opens the link on a new web page -->
       <!-- <a href="https://github.com/descentss" target="_blank"><i class="fab fa-github"></i></a> -->
