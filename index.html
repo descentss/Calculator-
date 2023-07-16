@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,15 +22,17 @@
             <div class="calculator-display">
               <div class="screen-previous">0</div>
               <!-- non breaking space necessary for initial div output -->
-              <div class="screen-current">&nbsp;</div>
+              <div class="screen-current"></div>
             </div>
           </div>
           <div class="buttons-grid">
             <!-- First Row-->
             <button class="btn" id="allClearBtn">AC</button>
             <button class="btn" id="deleteBtn">DEL</button>
-            <button class="btn" data-operator="remainder">%</button>
-            <button class="btn" data-operator="multiply">&#215</button>
+            <button class="btn" data-operator="remainder" id="remainderBtn">
+              %
+            </button>
+            <button class="btn" data-operator="multiply">×</button>
             <!-- Second Row -->
             <button class="btn" data-number>7</button>
             <button class="btn" data-number>8</button>
@@ -42,7 +47,7 @@
             <button class="btn" data-number>1</button>
             <button class="btn" data-number>2</button>
             <button class="btn" data-number>3</button>
-            <button class="btn" data-operator="divide">&#247</button>
+            <button class="btn" data-operator="divide">÷</button>
             <!-- Fifth Row -->
             <button class="btn" data-number>0</button>
             <button class="btn" id="decimalBtn">.</button>
@@ -54,8 +59,10 @@
     <footer class="footer">
       <p>
         Copyright
-        <script> document.write(new Date().getFullYear())</script>
-          Spencer See
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Spencer See
       </p>
       <!-- blank opens the link on a new web page -->
       <!-- <a href="https://github.com/descentss" target="_blank"><i class="fab fa-github"></i></a> -->
