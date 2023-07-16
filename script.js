@@ -32,15 +32,19 @@ operatorButtons.forEach((button) =>
 
 function appendNumber(number) {
   if (currentOperationScreen.textContent === "" || shouldReset) resetScreen();
-  currentOperationScreen.textContent += number;
+  if (currentOperationScreen.textContent.length > 19)
+    return; // Limits the amount of input text to 19 characters
+  else {
+    currentOperationScreen.textContent += number;
+  }
 }
 
 function continueOperation(operation) {
-  if (currentOperation !== null) evaluate();
+  if (currentOperation !== null) evaluate(); // evaluates the existing operation
   firstNumber = currentOperationScreen.textContent;
   currentOperation = operation;
   previousOperationScreen.textContent = `${firstNumber} ${currentOperation} `;
-  shouldReset = true;
+  shouldReset = true; // allows overwriting of the existing screen
 }
 
 // Other Buttons Clear, Delete, Decimal Buttons
@@ -48,7 +52,7 @@ function continueOperation(operation) {
 function allClear() {
   firstNumber = "";
   secondNumber = "";
-  currentOperation = null;
+  currentOperation = null; // Designates whether an operation can be added or not
   currentOperationScreen.textContent = ""; // \xa0 represents a non breaking space in JavaScript
   previousOperationScreen.textContent = 0;
 }
@@ -61,7 +65,8 @@ function backSpace() {
 }
 
 function appendDecimal() {
-  if (currentOperationScreen.textContent.includes(".")) return;
+  if (currentOperationScreen.textContent.includes("."))
+    return; // ensures one decimal point at a time
   else {
     currentOperationScreen.textContent += ".";
   }
@@ -77,13 +82,12 @@ function resetScreen() {
 function evaluate() {
   if (currentOperation === null || shouldReset) return;
   if (currentOperation === "÷" && currentOperationScreen.textContent === "0") {
-    currentOperationScreen.textContent = "Cannot be divided by zero";
+    currentOperationScreen.textContent = "Cannot be divided by zero"; //
+    shouldReset = true;
   } else {
     secondNumber = currentOperationScreen.textContent;
-    currentOperationScreen.textContent = operate(
-      firstNumber,
-      secondNumber,
-      currentOperation
+    currentOperationScreen.textContent = roundNumber(
+      operate(firstNumber, secondNumber, currentOperation)
     );
     previousOperationScreen.textContent = `${firstNumber} ${currentOperation} ${secondNumber} =`;
     currentOperation = null;
@@ -91,7 +95,7 @@ function evaluate() {
 }
 
 function roundNumber(number) {
-  Math.round((number * 1000) / 1000);
+  Math.round((number * 1000) / 1000); // ensures accuracy when multiplying or dividing in JS
 }
 
 function operate(x, y, operator) {

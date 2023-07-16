@@ -7,12 +7,10 @@
   --grey: #212121;
   --lightgrey: #616161;
   --green: #60a07f;
-  --orange: #ffa500;
+  --lightblue: #8cdeea;
 }
 
-*,
-*::before,
-*::after {
+* {
   font-family: "Roboto Condensed", sans-serif;
   box-sizing: border-box;
   padding: 0;
@@ -20,7 +18,7 @@
 }
 
 body {
-  background: var(--orange);
+  background: var(--lightblue);
 }
 
 .wrapper-parent {
@@ -78,7 +76,7 @@ body {
 .screen-current {
   height: 2rem;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--white);
 }
 
@@ -87,33 +85,34 @@ body {
   grid-template-columns: repeat(4, 1fr);
   height: 100%;
   padding: 1rem;
-  grid-gap: 0.7rem;
+  grid-gap: 0.65rem;
   background: var(--grey);
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
 
 .buttons-grid .btn {
-  /* font-size: 1rem; */
-  padding: 1rem 0;
+  font-size: 1.1rem;
+  padding: 1.225rem 0;
   background: var(--lightgrey);
-  /* border-radius: 100%; */
-  border-radius: 0.3rem;
-  font-weight: 600;
+  border: 0px;
+  border-radius: 25%;
+  font-weight: 500;
   cursor: pointer;
   outline: none;
   box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.5);
   transition: all 0.3 ease-in-out;
   color: #dfdfdf;
+  text-rendering: optimizeLegibility;
 }
 
 button#equalBtn {
   grid-column: 3/5;
-  /* border-radius: 2rem; */
+  border-radius: 1rem;
 }
 
-button:hover {
-  background-color: var(--orange);
+.btn:hover {
+  background: var(--lightblue);
   color: var(--white);
   transform: translateY(-0.2rem);
 }
